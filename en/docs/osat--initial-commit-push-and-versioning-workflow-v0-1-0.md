@@ -19,13 +19,13 @@ Before the initial commit, confirm the following are in place on your local mach
 Git must be installed and configured with your identity:
 
 ```bash
-git config --global user.name "Christopher Steel"
+git config --global user.name "FirstName LastName"
 git config --global user.email "your@email.com"
 ```
 
 A GitHub repository named `osat-fluent` must exist under your account at `github.com/steelcj/osat-fluent`. Create it with no README, no .gitignore, and no licence, so it is completely empty. The local repository will push its own initial state.
 
-Your local `osat-fluent` directory must match the target structure:
+Your local `something-fluent` directory matches your target structure:
 
 ```text
 osat-fluent/
@@ -53,6 +53,7 @@ Navigate to your local `osat-fluent` directory and initialise git:
 cd ~/Documents/areas/development/osat-fluent
 git init
 git branch -M main
+git status
 ```
 
 `git init` creates the `.git` directory. `git branch -M main` names the default branch `main` rather than the legacy `master`.
@@ -142,7 +143,9 @@ git push
 
 ## 7. How document versioning works in practice
 
-Every document in `en/docs/` carries its own version in the version block immediately below its H1 heading:
+TODO Update this. This is a poorly interpreted AI description...
+
+Every document in `en/docs/` carries its own version in the version block immediately below its H1 heading for documents below version `1.0.0`, once a document reaches version 1.0.0 they are no longer versioned individually using the file name. Until then you do something like this in order to facilitate rapid development until our vesrion becomes major:
 
 ```text
 Version: 0.2.0
