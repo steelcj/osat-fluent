@@ -1,6 +1,6 @@
 # osat-fluent
 
-The governing repository for the OSAT (Operating System Sovereign Autonomous Tools) collection. 
+The governing repository for the OSAT (Operating System Sovereign Autonomous Tools) collection.
 
 ## What OSAT means
 
@@ -26,17 +26,21 @@ The governing repository for the OSAT (Operating System Sovereign Autonomous Too
 
 ## Repository layout
 
-```bash
+```
 osat-fluent/
 ├── README.md
+├── CONTRIBUTORS.md
+├── VERSION
 └── en/
     ├── docs/
+    │   ├── osat--initial-commit-push-and-versioning-workflow-v0-1-0.md
     │   ├── osat--tool-creation-pattern-v0-1-0.md
     │   ├── osat--user-space-installation-specification-v0-2-0.md
-    │   ├── software-installation-archetypes-v0-1-0.md
     │   ├── restic-cross-platform-filesystem-layout-specification-v0-1-0.md
     │   ├── restic-platform-paths-spec-v0-1-0.md
-    │   └── restic-server-paths-spec-v0-1-0.md
+    │   ├── restic-server-paths-spec-v0-1-0.md
+    │   ├── software-installation-archetypes-v0-1-0.md
+    │   └── style-guide--versioned-documents-in-unrendered-markdown-v0-1-0.md
     └── utils/
         └── create-repo-dirs.py
 ```
@@ -54,7 +58,7 @@ Each tool in the OSAT collection is a separate repository that implements this s
 ## Starting a new tool
 
 ```
-python3 en/tools/create-repo-dirs.py <tool-name>
+python3 en/utils/create-repo-dirs.py <tool-name>
 ```
 
 Then follow the ten-step checklist in `en/docs/osat--tool-creation-pattern`.
