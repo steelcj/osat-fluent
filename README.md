@@ -1,6 +1,6 @@
 # osat-fluent
 
-The governing repository for the OSAT (Operating System Sovereign Autonomous Tools) collection.
+The governing repository for the OSAT (Operating System Sovereign Autonomous Tools) collection. 
 
 ## What OSAT means
 
