@@ -17,7 +17,7 @@ This repository uses two distinct versioning systems that operate independently 
 The repository version is a single semantic version string stored in the `VERSION` file at the root of the repository. It tracks the state of the repository as a whole — the collection of documents and tools it contains.
 
 ```
-VERSION → 0.1.0
+VERSION → 0.2.0
 ```
 
 Semantic versioning rules for the repository:

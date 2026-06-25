@@ -63,6 +63,10 @@ python3 en/utils/create-repo-dirs.py <tool-name>
 
 Then follow the ten-step checklist in `en/docs/osat--tool-creation-pattern`.
 
+## Languages
+
+- [English](README.md)
+
 ## License
 
 This repository, *osat-fluent*, by **Christopher Steel**, with AI assistance from **Claude Sonnet 4.6 (Anthropic)**, is licensed under the [GNU General Public License v3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html).
