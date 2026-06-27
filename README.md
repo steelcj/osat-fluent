@@ -47,7 +47,9 @@ osat-fluent/
 
 ## The collection
 
-Each tool in the OSAT collection is a separate repository that implements this specification:
+Each tool in the OSAT collection is a separate repository. Eventually they will all implements this specification and be renamed:
+
+These older tool style repos still function well on nix environments.
 
 - [hugo-tool](https://github.com/steelcj/hugo-tool) — Hugo static site generator
 - [rclone-tool](https://github.com/steelcj/rclone-tool) — rclone cloud storage sync
