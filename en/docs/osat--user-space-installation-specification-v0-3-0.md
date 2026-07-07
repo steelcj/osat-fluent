@@ -1,6 +1,6 @@
 # OSAT — User-Space Installation Specification
 
-Version: 0.2.1
+Version: 0.3.0
 Status: Draft
 Style Guide: style-guide--technical-documentation-for-technologists-v0.2.0
 
@@ -308,7 +308,15 @@ These are not two conventions but one rule applied to different variance scopes.
 
 Rationale recorded during the osat-fluent-sat-tool scaffold, where the question arose whether tool repositories should adopt SAT's top-level language root for symmetry. They should not: the layouts already agree at the level of principle, and mechanical symmetry would misstate what varies.
 
+### 10.8 Management identifier and directory ownership
 
+Manager-owned directories carry the management identifier, `<tool-name>-tool`, across all three user-space domains: `~/.config/<tool-name>-tool/`, `~/.local/share/<tool-name>-tool/`, and `~/.local/state/<tool-name>-tool/` where state is needed. The tool's own name remains reserved for directories the tool itself creates at runtime.
+
+This began as a config-collision fix: rclone's own convention claims `~/.config/rclone/`, so the manager took `~/.config/rclone-tool/`. The sat-tool implementation generalized it into a uniform ownership convention, `~/.config/sat/` is sat's runtime domain, owned by `sat init` and never touched by the manager, while `~/.config/sat-tool/` and `~/.local/share/sat-tool/` are the manager's.
+
+The identifier doubles as a provenance marker. Anything bearing `<tool-name>-tool` is a managed unit: installed by the manager, versioned, switchable through the env file, and safely removable as a whole. Anything bearing the tool's own name belongs to the tool. An operator inspecting an unfamiliar machine can read ownership directly from the directory names.
+
+We considered applying the identifier only where a collision exists, leaving collision-free domains like `~/.local/share/` to use the tool's plain name. We rejected this: ownership legibility is worth more than the shorter path, and reserving the plain name leaves the tool free to claim a data directory of its own later without colliding with the manager.
 
 This document, *OSAT — User-Space Installation Specification*, by **Christopher Steel**, with AI assistance from **Claude Sonnet 4.6 (Anthropic)**, is licensed under the [GNU General Public License v3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html).
 
@@ -316,6 +324,7 @@ This document, *OSAT — User-Space Installation Specification*, by **Christophe
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.3.0 | Draft | Added 10.8 management identifier and ownership) and a correcting note on the `0.2.1` row (should have been 0.3.0, new rule is MINOR; superseded by this version) |
 | 0.2.1 | Draft | Added 10.7 Language layer placement section |
 | 0.2.0 | Draft | Applied principle of least privilege to all permissions — 700/600 owner-only throughout; added principle of least privilege to design principles (section 2); added rationale section 10.6 |
 | 0.1.0 | Draft | Initial draft — supersedes ~/bin/ convention; establishes XDG-compliant layout across Linux, macOS, and Windows; covers all six installation archetypes |
