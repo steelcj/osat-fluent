@@ -7,6 +7,10 @@ N` file and the git tags. Dates are ISO 8601.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-08-06
+
+- added ADR-001
+
 ## [0.3.0] - 2026-08-03
 
 ### Added
