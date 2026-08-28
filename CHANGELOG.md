@@ -7,6 +7,8 @@ N` file and the git tags. Dates are ISO 8601.
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-08-28
+
 - Commited ADR osat-fluent--adr-001--installer-naming-install-vs-manage-v0-1-0.md
 - Deleted CLAUDE.md
 
